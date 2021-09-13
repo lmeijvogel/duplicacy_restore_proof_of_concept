@@ -1,0 +1,20 @@
+[
+    {
+        "name": "default",
+        "id": "desktop",
+        "repository": "",
+        "storage": "b2://<duplicacy bucket - see Lastpass or b2 buckets overview>",
+        "encrypted": true,
+        "no_backup": false,
+        "no_restore": false,
+        "no_save_password": false,
+        "nobackup_file": "",
+        "keys": {
+            "b2_id": "<username per Lastpass>",
+            "b2_key": "<password per Lastpass>",
+            "password": "<see comment in Lastpass entry>"
+        },
+        "filters": "",
+        "exclude_by_attribute": false
+    }
+]

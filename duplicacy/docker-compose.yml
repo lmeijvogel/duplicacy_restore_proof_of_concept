@@ -1,0 +1,6 @@
+services:
+  restore:
+    build: .
+    volumes:
+      - ./duplicacy-preferences:/app/.duplicacy/preferences:ro
+    command: /usr/bin/duplicacy list
