@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  influxdb:
+    image: influxdb:2.5
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=the-admin
+      - DOCKER_INFLUXDB_INIT_PASSWORD=password
+      - DOCKER_INFLUXDB_INIT_ORG=home
+      - DOCKER_INFLUXDB_INIT_BUCKET=readings
+        # This needs to be set to a different value than 'default', because otherwise it exits with failure
+      - DOCKER_INFLUXDB_INIT_CLI_CONFIG_NAME=dev
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=the-admin-token
+
+    volumes:
+      - "./config:/etc/influxdb2"
+      - "./data:/var/lib/influxdb2"
+    ports:
+      - 8086:8086
+    restart: unless-stopped
